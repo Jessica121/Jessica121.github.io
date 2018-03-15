@@ -1,0 +1,112 @@
+body, html{ height: 100%;
+text-align: center;}
+body {
+	padding-top: 51px;
+	color:black;
+}
+
+#home {
+	height: 100%;
+	/*Horiztonally and vertically centering content"*/
+    text-align: center;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	/*background-color: #B23B2F;	*/ 
+	background-image: url(img/ocean.jpg);
+	background-size: 100% 1000px;
+	height: 120vh;
+	padding: 40px 15px;
+    text-align: center;
+
+}
+
+.jess {
+	/*Horizontally centering the profile image*/
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+
+#home .jumbotron{
+ /*background-color: #B23B2F;*/
+   background: rgb(200, 54, 54); /* This is for ie8 and below */
+   background: rgba(200, 54, 54, 0);
+   /*last number is opacity */
+   	font-size: 80px;
+	color: black;
+   font-family: "Big Caslon",serif;
+   font-weight: bold;
+
+
+}
+
+
+.active {
+    background-color: white;
+}
+
+.arrow {
+	position: absolute;
+	opacity: .57;
+}
+.arrow, i {
+	color: black;
+}
+
+#About,#Projects,#Work{
+	font-family: "Palatino",serif;
+	font-size: 20px;
+	background-color:#ffe6f3;  /*pink*/
+	width:100%;
+	padding: 40px 70px;
+	text-align: center;
+}
+
+#ps{
+	color:black;
+}
+
+#created,#Contact{
+	text-align: center;
+}
+
+
+#Contact{
+	background: #000000;
+	padding: 100px;
+	font-family:Garamond;
+	outline-color: white;
+	color:white;
+}
+
+.navbar-brand, .navbar-nav, .nav{
+	text-align: center;
+	font-family:"Optima";
+}
+.lead {
+
+	color: black;
+	font-family:"Gill Sans";
+
+}
+
+footer,.foot,i{
+	color:#e6005c; /*darker pink*/
+}
+
+.undecorated-link{
+	color:grey;
+}
+
+#created{
+	color:grey;
+}
+
+#personlink{
+	color:black;
+}
+
+
