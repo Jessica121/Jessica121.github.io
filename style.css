@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
 
 body, html{ height: 100%;
 text-align: center;}
@@ -93,12 +93,24 @@ img {
 	color: black;
 }
 
+.appImg {
+	height: 280px;
+	width: auto;
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
 #About,#Projects,#Work{
 	font-family: 'Open Sans',serif;
 	font-size: 20px;
 	width:100%;
 	padding: 40px 70px;
 	text-align: center;
+}
+
+#Projects {
+	background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);
 }
 
 #Work {
@@ -174,15 +186,14 @@ img {
 	text-align: center;
 	font-family:"Optima";
 }
-.lead {
 
+.lead {
 	color: black;
 	font-family:"Gill Sans";
-
 }
 
 footer,.foot,i{
-	color:#e6005c; /*darker pink*/
+	color:grey;
 }
 
 .undecorated-link{
@@ -190,6 +201,7 @@ footer,.foot,i{
 }
 
 #created{
+	font-family: 'Open Sans',serif;
 	color:grey;
 }
 
