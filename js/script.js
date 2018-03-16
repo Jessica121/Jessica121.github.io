@@ -10,7 +10,16 @@ function cursorAnimation0() {
     }, 'fast', 'swing');
 } 
 
-/*Smooth scroll function*/
+/*function to mark selection in nav bar as active*/
+$(function() {
+  $('.nav li').click(function() {
+     $('.nav li').removeClass();
+     $(this).addClass('active');
+  });
+});
+
+$(function() {
+  /*Smooth scroll function*/
 $('#About').on('click', function(e) {
 
    // prevent default anchor click behavior
@@ -30,11 +39,4 @@ $('#About').on('click', function(e) {
      });
 
 });
-
-/*function to mark selection in nav bar as active*/
-$(function() {
-  $('.nav li').click(function() {
-     $('.nav li').removeClass();
-     $(this).addClass('active');
-  });
-});
+})

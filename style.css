@@ -1,8 +1,48 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
 body, html{ height: 100%;
 text-align: center;}
 body {
 	padding-top: 51px;
 	color:black;
+}
+
+/*Underline when hover*/
+.title {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+
+.title:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.title:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+a, a:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #home {
@@ -35,14 +75,11 @@ body {
    background: rgb(200, 54, 54); /* This is for ie8 and below */
    background: rgba(200, 54, 54, 0);
    /*last number is opacity */
-   	font-size: 80px;
-	color: black;
+   font-size: 80px;
+   color: black;
    font-family: "Big Caslon",serif;
    font-weight: bold;
-
-
 }
-
 
 .active {
     background-color: white;
@@ -57,12 +94,63 @@ body {
 }
 
 #About,#Projects,#Work{
-	font-family: "Palatino",serif;
+	font-family: 'Open Sans',serif;
 	font-size: 20px;
-	background-color:#ffe6f3;  /*pink*/
 	width:100%;
 	padding: 40px 70px;
 	text-align: center;
+}
+
+#Work {
+  background: linear-gradient(90deg, #b9deed, #efefef);
+}
+
+/*gradient background*/
+#About {
+	width: 100wh;
+	height: 90vh;
+	color: #fff;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }
 
 #ps{
@@ -106,7 +194,7 @@ footer,.foot,i{
 }
 
 #personlink{
-	color:black;
+	color:white;
 }
 
 
