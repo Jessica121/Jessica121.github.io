@@ -34,6 +34,10 @@ body {
   left: 0; 
 }
 
+/*h3.title {
+	color:black;
+}  */    
+
 a, a:hover {
 	text-decoration: none;
 	color: inherit;
@@ -61,14 +65,6 @@ img {
     text-align: center;
 
 }
-
-.jess {
-	/*Horizontally centering the profile image*/
-	margin-left: auto;
-	margin-right: auto;
-
-}
-
 
 #home .jumbotron{
  /*background-color: #B23B2F;*/
@@ -111,6 +107,7 @@ img {
 
 #Projects {
 	background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);
+	color:white;
 }
 
 #Work {
@@ -177,7 +174,7 @@ img {
 #Contact{
 	background: #000000;
 	padding: 100px;
-	font-family:Garamond;
+	font-family:'Open Sans',serif;
 	outline-color: white;
 	color:white;
 }
@@ -206,7 +203,7 @@ footer,.foot,i{
 }
 
 #personlink{
-	color:white;
+	color:#faebeb;
 }
 
 

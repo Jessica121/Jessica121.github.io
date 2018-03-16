@@ -18,6 +18,32 @@ $(function() {
   });
 });
 
+/*hover func*/
+
+$(function(){
+  $('.hoverText').delegate('span', 'mouseenter mouseleave', function(e){
+    
+    var span = $(this);
+    
+    if (e.type === 'mouseenter'){
+      span.not(':animated').animate({ fontSize: '50px' });
+    }
+    else if (e.type === 'mouseleave'){
+      span.animate({ fontSize: '70px' });
+    }
+  });
+  
+  var newText = '',
+      h1 = $('.hoverText').text(),
+      len = h1.length;
+
+  for (var i = 0; i < len; i++){
+    newText += '<span>' + h1.charAt(i) + '</span>';
+}
+  $('.hoverText').html(newText);  
+});
+
+
 $(function() {
   /*Smooth scroll function*/
 $('#About').on('click', function(e) {
