@@ -1,68 +1,50 @@
-$(document).ready(function() {
-    setInterval ('cursorAnimation0()', 700);
-});
+var Expand = (function() {
+  var tile = $(".strips__strip");
+  var tileLink = $(".strips__strip > .strip__content");
+  var tileText = tileLink.find(".strip__inner-text");
+  var stripClose = $(".strip__close");
 
-function cursorAnimation0() {
-    $('#curser').animate({
-        opacity: 0
-    }, 'fast', 'swing').animate({
-        opacity: 1
-    }, 'fast', 'swing');
-} 
+  var expanded = false;
 
-/*function to mark selection in nav bar as active*/
-$(function() {
-  $('.nav li').click(function() {
-     $('.nav li').removeClass();
-     $(this).addClass('active');
-  });
-});
+  var open = function() {
+    var tile = $(this).parent();
 
-/*hover func*/
-
-$(function(){
-  $('.hoverText').delegate('span', 'mouseenter mouseleave', function(e){
-    
-    var span = $(this);
-    
-    if (e.type === 'mouseenter'){
-      span.not(':animated').animate({ fontSize: '50px' });
+    if (!expanded) {
+      tile.addClass("strips__strip--expanded");
+      // add delay to inner text
+      tileText.css("transition", "all .5s .3s cubic-bezier(0.23, 1, 0.32, 1)");
+      stripClose.addClass("strip__close--show");
+      stripClose.css("transition", "all .6s 1s cubic-bezier(0.23, 1, 0.32, 1)");
+      expanded = true;
     }
-    else if (e.type === 'mouseleave'){
-      span.animate({ fontSize: '70px' });
+  };
+
+  var close = function() {
+    if (expanded) {
+      tile.removeClass("strips__strip--expanded");
+      // remove delay from inner text
+      tileText.css("transition", "all 0.15s 0 cubic-bezier(0.23, 1, 0.32, 1)");
+      stripClose.removeClass("strip__close--show");
+      stripClose.css(
+        "transition",
+        "all 0.2s 0s cubic-bezier(0.23, 1, 0.32, 1)"
+      );
+      expanded = false;
     }
-  });
-  
-  var newText = '',
-      h1 = $('.hoverText').text(),
-      len = h1.length;
+  };
 
-  for (var i = 0; i < len; i++){
-    newText += '<span>' + h1.charAt(i) + '</span>';
-}
-  $('.hoverText').html(newText);  
-});
+  var bindActions = function() {
+    tileLink.on("click", open);
+    stripClose.on("click", close);
+  };
 
+  var init = function() {
+    bindActions();
+  };
 
-$(function() {
-  /*Smooth scroll function*/
-$('#About').on('click', function(e) {
+  return {
+    init: init
+  };
+})();
 
-   // prevent default anchor click behavior
-   e.preventDefault();
-
-   // store hash
-   var hash = this.hash;
-
-   // animate
-   $('html, body').animate({
-       scrollTop: $(this.hash).offset().top
-     }, 600, function(){
-
-       // when done, add hash to url
-       // (default click behaviour)
-       window.location.hash = hash;
-     });
-
-});
-})
+Expand.init();
